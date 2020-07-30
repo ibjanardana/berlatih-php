@@ -1,6 +1,21 @@
 <?php
-function tentukan_deret_geometri($arr) {
-// kode di sini
+function tentukan_deret_geometri($arr)
+{
+    // kode di sini
+    if (sizeof($arr) <= 1) {
+        return true;
+    }
+
+    $rasio = $arr[1] / $arr[0];
+
+    for ($i = 1; $i < sizeof($arr); $i++) {
+        if (($arr[$i] / ($arr[$i - 1])) != $rasio) {
+            echo "<br>";
+            return "false";
+        }
+    }
+    echo "<br>";
+    return "true";
 }
 //TEST CASES
 echo tentukan_deret_geometri([1, 3, 9, 27, 81]); // true

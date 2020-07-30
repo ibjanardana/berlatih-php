@@ -1,6 +1,16 @@
 <?php
-function pasangan_terbesar($angka){
-// kode di sini
+function pasangan_terbesar($angka)
+{
+    // kode di sini
+    $angka_terbesar = substr($angka, 0, 2);
+    for ($i = 0; $i <= strlen($angka) - 2; $i++) {
+        $pasangan_angka = substr($angka, $i, 2);
+        if ($pasangan_angka > $angka_terbesar) {
+            $angka_terbesar = $pasangan_angka;
+        }
+    }
+    echo "<br>";
+    return $angka_terbesar;
 }
 
 // TEST CASES

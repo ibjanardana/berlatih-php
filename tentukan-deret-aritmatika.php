@@ -6,10 +6,10 @@ function tentukan_deret_aritmatika($arr)
         return true;
     }
 
-    $rasio = $arr[1] / $arr[0];
+    $n = $arr[1] - $arr[0];
 
     for ($i = 1; $i < sizeof($arr); $i++) {
-        if (($arr[$i] / ($arr[$i - 1])) != $rasio) {
+        if (($arr[$i] - ($arr[$i - 1])) != $n) {
             echo "<br>";
             return "false";
         }
